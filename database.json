@@ -140,34 +140,6 @@
       "price": "$50",
       "address": "109 Cherry Street",
       "contact": "555-8901"
-    },
-    {
-      "id": "87f8",
-      "name": "Pizzaburg",
-      "price": "$40",
-      "address": "Uttara",
-      "contact": "019827"
-    },
-    {
-      "id": "bc32",
-      "name": "Khans",
-      "price": "$60",
-      "address": "Gulshan",
-      "contact": "1213133"
-    },
-    {
-      "id": "46c4",
-      "name": "Pizza",
-      "price": "srgs",
-      "address": "sets",
-      "contact": "sefsr"
-    },
-    {
-      "id": "3896",
-      "name": "Pizza",
-      "price": "shdfhs",
-      "address": "sets",
-      "contact": "adds"
     }
   ]
 }

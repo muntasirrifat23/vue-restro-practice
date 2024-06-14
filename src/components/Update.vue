@@ -70,9 +70,3 @@ export default {
     }
 }
 </script>
-
-<style>
-.bg {
-    /* background-image: src('../assets/bg.jpeg'); */
-}
-</style>
