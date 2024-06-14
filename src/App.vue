@@ -15,6 +15,12 @@ body{
     margin: 0px;
 }
 
+p{
+    font-weight: bold;
+    color: crimson;
+    font-size: 30px;
+    text-decoration: underline;
+}
 /* 
 @media (min-width: 1024px) {
     header {

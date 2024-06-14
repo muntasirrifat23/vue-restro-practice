@@ -23,7 +23,7 @@ export default {
         return {
             restaurant: {
                 name: '',
-                price:'',
+                price: '',
                 address: '',
                 contact: ''
             },
@@ -31,14 +31,18 @@ export default {
     },
     methods: {
         async addRes() {
-            console.log(this.restaurant);
-            const result = await axios.post("http://localhost:4000/restaurant",{
-                name:this.restaurant.name,
-                price:this.restaurant.price,
-                address:this.restaurant.address,
-                contact:this.restaurant.contact,
+            // console.log(this.restaurant);
+            const result = await axios.post("http://localhost:4000/restaurant", {
+                name: this.restaurant.name,
+                price: this.restaurant.price,
+                address: this.restaurant.address,
+                contact: this.restaurant.contact,
             });
-
+            if (result.status == 200) {
+                this.$router.push({
+                    name: 'Home'
+                })
+            }
         }
     },
 
@@ -46,7 +50,6 @@ export default {
     mounted() {
         console.log("mount");
         let users = localStorage.getItem('UserInfo');
-        //52 Authentication
         if (!users) {
             this.$router.push({
                 name: 'Sign'

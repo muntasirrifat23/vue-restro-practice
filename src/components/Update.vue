@@ -14,6 +14,7 @@
 <script>
 import Header from './Header.vue'
 import axios from 'axios';
+import image from '../assets/bg.jpeg'
 export default {
     components: {
         Header
@@ -23,19 +24,29 @@ export default {
         return {
             restaurant: {
                 name: '',
-                price:'',
+                price: '',
                 address: '',
                 contact: ''
             },
         }
     },
 
-    methods:{
-      //64
-      updateRes(){
-        console.log(this.restaurant);
-        //http://localhost:4000/restaurant/
-      }
+    methods: {
+        //64
+        async updateRes() {
+            // console.log(this.restaurant);
+            const result = await axios.put("http://localhost:4000/restaurant/" + this.$route.params.id, {
+                name: this.restaurant.name,
+                price: this.restaurant.price,
+                address: this.restaurant.address,
+                contact: this.restaurant.contact,
+            });
+            if (result.status == 200) {
+                this.$router.push({
+                    name: 'Home'
+                })
+            }
+        }
     },
 
     // 52 Authentication
@@ -50,13 +61,18 @@ export default {
         }
 
         //63 Update
-        const result = await axios.get("http://localhost:4000/restaurant/"+this.$route.params.id);
+        const result = await axios.get("http://localhost:4000/restaurant/" + this.$route.params.id);
         console.log(result.data);
         //Data Prefill
         this.restaurant = result.data;
 
-        
         // console.log(this.$route.params.id);
     }
 }
 </script>
+
+<style>
+.bg {
+    /* background-image: src('../assets/bg.jpeg'); */
+}
+</style>
