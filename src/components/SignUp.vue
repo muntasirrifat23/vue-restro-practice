@@ -1,5 +1,5 @@
 <template>
-    <Header></Header>
+<Header></Header>
 <div class="signUp">
     <img src="../assets/signup.png">
     <input v-model="name" type="text" placeholder="Enter Name">
@@ -19,7 +19,7 @@ import Header from './Header.vue'
 import axios from 'axios'
 
 export default {
-    components:{
+    components: {
         Header
     },
     data() {
@@ -41,11 +41,13 @@ export default {
             if (result.status == 201) {
                 alert('Sign Up Done');
                 //50
-                localStorage.setItem ("UserInfo", JSON.stringify(result.data));
+                localStorage.setItem("UserInfo", JSON.stringify(result.data));
                 //51
-                this.$router.push({name:'Home'})
+                this.$router.push({
+                    name: 'Home'
+                })
             }
-          
+
         }
     },
     //52 Authentication
@@ -58,15 +60,19 @@ export default {
 }
 </script>
 
-<style scoped>
-.signUp {
+<style>
+.signUp,
+.add,
+.update {
     height: 40px;
     width: 200px;
     margin-left: auto;
     margin-right: auto;
 }
 
-.signUp input {
+.signUp input,
+.add input,
+.update input {
     padding: 15px;
     margin-top: 20px;
     border: 1px solid skyblue;
@@ -82,7 +88,8 @@ export default {
     padding: 7px;
     font-weight: bold
 }
-p{
+
+p {
     text-align: center;
 }
 </style>

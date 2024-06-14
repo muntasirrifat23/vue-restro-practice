@@ -24,7 +24,6 @@ export default{
             localStorage.clear();
             this.$router.push({name:'Login'})
         }
-
     }
 }
 
@@ -36,12 +35,8 @@ export default{
    overflow: hidden; 
    text-align: center;
    padding: 20px;
-   /* position:absolute;
-   top: 0;
-   width: 100%;
-   z-index: 1000;
-   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
 }
+
 .head a{
     color: white;
     padding: 20px ;
